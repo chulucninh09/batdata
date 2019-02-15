@@ -48,7 +48,7 @@ toTime = datetime.datetime(2018,12,31)
 hpgHist = vnd.hist("HPG","close",fromTime,toTime)
 
 # historical OHLC data of HPG, MSN
-hpgHistWeekly = vnd.hist(["HPG","MSN"],["open","high","low","close"],"20180101","20181231",interval="w")
+hpgHistWeekly = vnd.hist(["HPG","MSN"],["open","high","low","close"],"20180101","20181231")
 
 # last price
 hpgLast = vnd.curr("HPG","last")
