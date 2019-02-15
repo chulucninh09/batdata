@@ -1,20 +1,63 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Introduction
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+`batquant` is a package that helps developers, researchers to quickly get Vietnam financial data. Since Vietnam is not well-supported by famous platform like Bloomberg, Reuters, Yahoo, Google, we were inspired to develop our own data package that serves Vietnam data.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# Recent changes
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## v0.1.0 - 20190215:
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+- First version
+- Data available: trading data only
+
+## Incoming: v0.2.0:
+
+##### Add more data:
+
+- reference prices (ceiling, floor, ref price...)
+- stock info (company name, shareout, list of stocks)
+
+##### Exception handler
+
+##### Reference object to lookup for fields
+
+# Installation
+
+`pip install batdata`
+
+# Usage
+
+## Init data object
+
+```
+import batdata
+vnd = batdata.Vnd() # Data from VND api
+```
+
+## Getting data
+
+```
+# historical data of HPG from 2018-01-01 to 2018-12-31
+data = vnd.hist("HPG","close","20180101","20181231")
+
+jsonData = data.json # getting data as json
+dfData = data.df # getting data as pandas DataFrame
+
+# fromTime and toTime can also be python datetime objects
+fromTime = datetime.datetime(2018,01,01)
+toTime = datetime.datetime(2018,12,31)
+hpgHist = vnd.hist("HPG","close",fromTime,toTime)
+
+# historical OHLC data of HPG, MSN
+hpgHistWeekly = vnd.hist(["HPG","MSN"],["open","high","low","close"],"20180101","20181231",interval="w")
+
+# last price
+hpgLast = vnd.curr("HPG","last")
+
+
+```
+
+# TODO
+
+## Financial fields reference
+
+## More data
