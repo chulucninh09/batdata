@@ -1,6 +1,6 @@
 # Introduction
 
-`batquant` is a package that helps developers, researchers to quickly get Vietnam financial data. Since Vietnam is not well-supported by famous platform like Bloomberg, Reuters, Yahoo, Google, we were inspired to develop our own data package that serves Vietnam data.
+`batquant` is a package that helps developers, researchers to quickly get Vietnam financial data. Since Vietnam data is not well-supported by famous platforms like Bloomberg, Reuters, Yahoo, Google, we were inspired to develop our own data package that serves Vietnam data.
 
 # Recent changes
 
